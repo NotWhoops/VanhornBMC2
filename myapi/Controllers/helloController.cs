@@ -1,15 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace myapi.Controllers
+namespace API_Rehash.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class helloController : ControllerBase
+    public class SayHelloController : ControllerBase
     {
-        
+        [HttpGet]
+        [Route("SayHello/{name}")]
+        public string SayHello(string name)
+        {
+            return $"Hello {name}!";
+        }
     }
 }
